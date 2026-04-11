@@ -7,7 +7,7 @@
     <title>Masafa | @yield('title')</title>
     
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
 </head>
 <body>
 
