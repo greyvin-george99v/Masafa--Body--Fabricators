@@ -4,6 +4,7 @@
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
+    "outputDirectory": "public",
     "installCommand": "echo 'Skipping install'",
     "buildCommand": "echo 'Skipping build'",
     "routes": [
