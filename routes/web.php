@@ -2,23 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Home
+Route::view('/', 'welcome')->name('home');
 
-Route::get('/services', function () {
-    return view('services');
-});
+// Main Pages
+Route::view('/services', 'services')->name('services');
+Route::view('/about', 'about')->name('about');
+Route::view('/gallery', 'gallery')->name('gallery');
+Route::view('/contacts', 'contacts')->name('contacts');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-
-Route::get('/gallery', function () {
-    return view('gallery');
-});
-
-Route::get('/contacts', function () {
-    return view('contacts');
-});
+// Legal
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy');

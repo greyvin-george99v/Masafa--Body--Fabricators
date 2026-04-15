@@ -13,135 +13,117 @@
         </div>
     </section>
 
-<section class="offerings-section"> <div class="container">
-        <div class="section-header">
-            <span class="sub-label">OUR SERVICES</span>
-            <h2 class="section-title">What we <span class="italic-plum">offer</span></h2>
-            <p class="section-desc">
-                At Masafa, we specialize exclusively in Toyota Land Cruisers, 
-                offering a comprehensive range of services to enhance, maintain, 
-                and customize your vehicle.
-            </p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card reveal-on-scroll">
-                <img src="{{ asset('images/masafa-1.jpg') }}" alt="Game Viewer Conversions">
-                <div class="card-body">
-                    <h3>Game Viewer Conversions</h3>
-                    <p>Custom game viewer conversions for safari and wildlife viewing operations, designed for optimal visibility and comfort.</p>
-                    <a href="#game-viewer" class="learn-more">Learn More <i class="arrow-icon">→</i></a>
-                </div>
+    <section class="offerings-section"> 
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-label">OUR EXPERTISE</span>
+                <h2 class="section-title">What we <span class="italic-plum">offer</span></h2>
+                <p class="section-desc">
+                    At Masafa, we specialize exclusively in Toyota Land Cruisers, 
+                    offering heavy-duty engineering to enhance, maintain, 
+                    and customize your vehicle for the African wilderness.
+                </p>
             </div>
 
-            <div class="service-card reveal-on-scroll">
-                <img src="{{ asset('images/masafa-2.jpg') }}" alt="Land Cruiser Accessories">
-                <div class="card-body">
-                    <h3>Land Cruiser Accessories</h3>
-                    <p>Premium accessories to enhance your Toyota Land Cruiser's performance, comfort, and capability in any terrain.</p>
-                    <a href="#expedition" class="learn-more">Learn More <i class="arrow-icon">→</i></a>
+            <div class="services-grid">
+                <div class="service-card reveal-on-scroll">
+                    <img src="{{ asset('images/masafa-1.jpg') }}" alt="Safari Body Conversions">
+                    <div class="card-body">
+                        <h3>Safari Body Conversions</h3>
+                        <p>Specialized 6-seater extensions built with corrosion-resistant GI zinc-coated sheets for longevity in harsh environments.</p>
+                        <a href="#safari-conversions" class="learn-more">Explore features<i class="arrow-icon">→</i></a>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-on-scroll">
+                    <img src="{{ asset('images/masafa-2.jpg') }}" alt="Expedition Outfitting">
+                    <div class="card-body">
+                        <h3>Expedition Outfitting</h3>
+                        <p>Complete overlanding setups featuring signature pop-up roofs, gas-shock systems, and premium interior insulation.</p>
+                        <a href="#expedition" class="learn-more">Explore Features <i class="arrow-icon">→</i></a>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-on-scroll">
+                    <img src="{{ asset('images/masafa-3.jpg') }}" alt="Accessories & Electrical">
+                    <div class="card-body">
+                        <h3>Accessories & Electrical</h3>
+                        <p>Heavy-duty protection gear and advanced power solutions including inverters and multi-socket charging stations.</p>
+                        <a href="#accessories" class="learn-more">Explore features<i class="arrow-icon">→</i></a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="service-card reveal-on-scroll">
-                <img src="{{ asset('images/masafa-3.jpg') }}" alt="Maintenance & Repairs">
-                <div class="card-body">
-                    <h3>Maintenance & Repairs</h3>
-                    <p>Specialized maintenance and repair services for Toyota Land Cruisers, performed by experienced technicians.</p>
-                    <a href="#accessories" class="learn-more">Learn More <i class="arrow-icon">→</i></a>
-                </div>
+    <section id="safari-conversions" class="service-detail bg-light" reveal-on-scroll>
+        <div class="container flex-row">
+            <div class="detail-image">
+                <img src="{{ asset('images/masafa-1.jpg') }}" alt="Safari Body Conversions">
+            </div>
+            <div class="detail-info">
+                <h2 class="detail-title">Safari Body Conversions</h2>
+                <p class="detail-desc">Our flagship service transforms standard Land Cruisers into high-capacity safari rigs. We utilize specialized fabrication techniques to ensure every build withstands the rigors of off-road tourism.</p>
+                
+                <h3 class="feature-heading">Technical Specifications:</h3>
+                <ul class="feature-list">
+                    <li>Standard body conversion extended to a 6-seater configuration</li>
+                    <li>Body built using high-grade GI zinc-coated steel sheets</li>
+                    <li>Elevated windscreen for enhanced panoramic wildlife viewing</li>
+                    <li>Big sliding windows for optimal ventilation and photography</li>
+                    <li>Heavy-duty floor mats and specialized rear tools compartment</li>
+                    <li>Reinforced chassis integrity for extended vehicle life</li>
+                </ul>
+                <a href="{{ url('/contacts') }}" class="btn-plum">Inquire About Conversions</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="game-viewer" class="service-detail bg-light" reveal-on-scroll>
-    <div class="container flex-row">
-        <div class="detail-image">
-            <img src="{{ asset('images/masafa-1.jpg') }}" alt="Game Viewer Conversions">
+    <section id="expedition" class="service-detail" reveal-on-scroll>
+        <div class="container flex-row row-reverse">
+            <div class="detail-image">
+                <img src="{{ asset('images/masafa-2.jpg') }}" alt="Expedition Outfitting">
+            </div>
+            <div class="detail-info">
+                <h2 class="detail-title">Expedition Outfitting</h2>
+                <p class="detail-desc">We bridge the gap between rugged utility and passenger comfort. Our expedition builds are designed for long-distance travel where reliability and climate control are paramount.</p>
+                
+                <h3 class="feature-heading">Comfort & Utility Features:</h3>
+                <ul class="feature-list">
+                    <li>Signature pop-up roof with heavy-duty gas shocks</li>
+                    <li>Front-access hatch for versatile spotting opportunities</li>
+                    <li>Premium roof padding and sound/thermal lining</li>
+                    <li>Flexible seating: 4 full-recliners and 2 non-recliner seats</li>
+                    <li>Integrated luggage rack systems for extended gear storage</li>
+                    <li>Double side-steps for easy cabin entry and exit</li>
+                </ul>
+                <a href="{{ url('/contacts') }}" class="btn-plum">Build Your Expedition Rig</a>
+            </div>
         </div>
-        <div class="detail-info">
-            <h2 class="detail-title">Game Viewer Conversions</h2>
-            <p class="detail-desc">Our game viewer conversions transform Toyota Land Cruisers into the perfect safari vehicles, designed for optimal wildlife viewing while ensuring passenger comfort and safety.</p>
-            
-            <h3 class="feature-heading">Features include:</h3>
-            <ul class="feature-list">
-                <li>Elevated seating arrangements for optimal visibility</li>
-                <li>Custom roof configurations for shade and photography</li>
-                <li>Reinforced chassis and suspension for off-road performance</li>
-                <li>Storage solutions for equipment and refreshments</li>
-                <li>Custom electrical systems for charging and lighting</li>
-            </ul>
-            <a href="{{ url('/contacts') }}" class="btn-plum">Inquire About Game Viewer Conversions</a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="expedition" class="service-detail" reveal-on-scroll>
-     <div class="container flex-row row-reverse">
-        <div class="detail-image">
-            <img src="{{ asset('images/masafa-1.jpg') }}" alt="Game Viewer Conversions">
+    <section id="accessories" class="service-detail bg-light">
+        <div class="container flex-row">
+            <div class="detail-image">
+                <img src="{{ asset('images/masafa-3.jpg') }}" alt="Accessories & Electrical">
+            </div>
+            <div class="detail-info">
+                <h2 class="detail-title">Accessories & Electrical</h2>
+                <p class="detail-desc">Custom-fitted protection and power management systems. We ensure your Land Cruiser is equipped with the necessary tools to keep your electronics running and your bodywork protected.</p>
+                
+                <h3 class="feature-heading">Electrical & Exterior Add-ons:</h3>
+                <ul class="feature-list">
+                    <li>Professional-grade Inverter systems for 240V power</li>
+                    <li>Strategically placed 4-socket charging stations</li>
+                    <li>Heavy-duty Bullbar and front-end protection</li>
+                    <li>Dual rear tyre carriers for long-range peace of mind</li>
+                    <li>Integrated lighting systems and recovery mounting points</li>
+                    <li>Customized tools compartments for organized field repairs</li>
+                </ul>
+                <a href="{{ url('/contacts') }}" class="btn-plum">Explore Accessories</a>
+            </div>
         </div>
-        <div class="detail-info">
-            <h2 class="detail-title">Game Viewer Conversions</h2>
-            <p class="detail-desc">Our game viewer conversions transform Toyota Land Cruisers into the perfect safari vehicles, designed for optimal wildlife viewing while ensuring passenger comfort and safety.</p>
-            
-            <h3 class="feature-heading">Features include:</h3>
-            <ul class="feature-list">
-                <li>Elevated seating arrangements for optimal visibility</li>
-                <li>Custom roof configurations for shade and photography</li>
-                <li>Reinforced chassis and suspension for off-road performance</li>
-                <li>Storage solutions for equipment and refreshments</li>
-                <li>Custom electrical systems for charging and lighting</li>
-            </ul>
-            <a href="{{ url('/contacts') }}" class="btn-plum">Inquire About Game Viewer Conversions</a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="expedition" class="service-detail" reveal-on-scroll>
-    <div class="container flex-row row-reverse">
-        <div class="detail-image">
-            <img src="{{ asset('images/masafa-2.jpg') }}" alt="Expedition Conversions">
-        </div>
-        <div class="detail-info">
-            <h2 class="detail-title">Expedition Conversions</h2>
-            <p class="detail-desc">Transform your Land Cruiser into the ultimate expedition vehicle. Whether you're planning an overland adventure or need a reliable vehicle for remote expeditions, we build the perfect solution.</p>
-            
-            <h3 class="feature-heading">Our Conversions include:</h3>
-            <ul class="feature-list">
-                <li>6-Door Conversions</li>
-                <li>Canopy Conversions</li>
-                <li>Interior Customization</li>
-                <li>Camping and expedition conversions</li>
-            </ul>
-            <a href="{{ url('/contacts') }}" class="btn-plum">Schedule Maintenance</a>
-        </div>
-    </div>
-</section>
-
-<section id="accessories" class="service-detail bg-light">
-    <div class="container flex-row">
-        <div class="detail-image">
-            <img src="{{ asset('images/masafa-3.jpg') }}" alt="Land Cruiser Accessories">
-        </div>
-        <div class="detail-info">
-            <h2 class="detail-title">Land Cruiser Accessories</h2>
-            <p class="detail-desc">We offer a wide range of premium accessories specifically designed for Toyota Land Cruisers, enhancing their performance, comfort, and capability in any environment.</p>
-            
-            <h3 class="feature-heading">Available Accessories include:</h3>
-            <ul class="feature-list">
-                <li>Bull bars and vehicle protection equipment</li>
-                <li>Winches and recovery gear</li>
-                <li>Suspension upgrades and lift kits</li>
-                <li>Roof racks and storage solutions</li>
-                <li>Lighting systems and electrical upgrades</li>
-            </ul>
-            <a href="{{ url('/contacts') }}" class="btn-plum">Explore Land Cruiser Accessories</a>
-        </div>
-    </div>
-</section>
-
-@include('components.cta')
-
-    @endsection
+    @include('components.cta')
+@endsection

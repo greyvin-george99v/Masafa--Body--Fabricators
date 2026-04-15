@@ -129,11 +129,11 @@
         </div>
         <div class="card-body">
           <div class="card-content">
-            <h3>Game Viewer Conversions</h3>
-            <p>Custom game viewer conversions for safari and wildlife viewing operations, designed for optimal visibility and comfort.</p>
+            <h3>Safari Body Conversions</h3>
+            <p>Specialized 6-seater extensions built with corrosion-resistant GI zinc-coated sheets for longevity in harsh environments.</p>
           </div>
           <a href="{{ url('/services#game-viewer') }}" class="learn-more">
-              Learn More <span class="arrow-icon">→</span>
+              Explore feau <span class="arrow-icon">→</span>
           </a>
         </div>
       </article>

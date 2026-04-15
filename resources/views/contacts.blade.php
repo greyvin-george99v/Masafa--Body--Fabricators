@@ -71,13 +71,12 @@
                     <div class="info-block">
                         <span class="info-label">Phone</span>
                         <p class="info-value">+254 721 519 537</p>
-                        <p class="info-sub">Mon–Fri: 07:00–17:00 EAT<br>Saturday: 8:00–12:00<br>Sunday: Closed</p>
+                        <p class="info-sub">Mon–Fri: 07:00–17:00 EAT<br>Saturday: 8:00–12:00<</p>
                     </div>
 
                     <div class="info-block">
                         <span class="info-label">Email</span>
                         <p class="info-value">info@masafabodyfabri.co.ke</p>
-                        <p class="info-sub">Mon–Fri: 07:00–17:00 EAT<br>Saturday: 8:00–12:00<br>Sunday: Closed</p>
                     </div>
 
                     <div class="info-block">
