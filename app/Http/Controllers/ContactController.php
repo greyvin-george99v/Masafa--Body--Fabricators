@@ -20,20 +20,18 @@ class ContactController extends Controller
             'message'  => 'required|string',
         ]);
 
-        $emailBody = "New Quote Request from Masafa Website\n\n";
-        $emailBody .= "Name:     {$data['name']}\n";
-        $emailBody .= "Company:  " . ($data['company'] ?? 'N/A') . "\n";
-        $emailBody .= "Email:    {$data['email']}\n";
-        $emailBody .= "Phone:    {$data['phone']}\n";
-        $emailBody .= "Location: " . ($data['location'] ?? 'N/A') . "\n\n";
-        $emailBody .= "Subject:  {$data['subject']}\n\n";
-        $emailBody .= "Message:\n";
-        $emailBody .= $data['message'] . "\n\n";
-        $emailBody .= "---\n";
-        $emailBody .= "Sent from: https://masafabodyfabricators.com";
+        $body = "New Quote Request from Masafa Website\n\n";
+        $body .= "Name:     " . $data['name'] . "\n";
+        $body .= "Company:  " . ($data['company'] ?? 'N/A') . "\n";
+        $body .= "Email:    " . $data['email'] . "\n";
+        $body .= "Phone:    " . $data['phone'] . "\n";
+        $body .= "Location: " . ($data['location'] ?? 'N/A') . "\n\n";
+        $body .= "Subject:  " . $data['subject'] . "\n\n";
+        $body .= "Message:\n" . $data['message'] . "\n\n";
+        $body .= "---\nSent from: https://masafabodyfabricators.com";
 
         try {
-            Mail::raw($emailBody, function ($message) use ($data) {
+            Mail::raw($body, function ($message) use ($data) {
                 $message->to('info@masafabodyfabricators.com')
                         ->replyTo($data['email'], $data['name'])
                         ->from('info@masafabodyfabricators.com', 'Masafa Body Fabricators')
@@ -44,9 +42,9 @@ class ContactController extends Controller
 
         } catch (\Exception $e) {
             Log::error('Contact Form Error: ' . $e->getMessage());
-
+            
             return back()->withInput()
-                         ->with('error', 'Mail Error: ' . $e->getMessage());
+                         ->with('error', 'Sorry, we could not send your message right now. Please try again or call us directly.');
         }
     }
 }
