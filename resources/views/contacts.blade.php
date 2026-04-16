@@ -26,46 +26,77 @@
                 </div>
 
                 @if(session('success'))
-                    <div style="background: #1a1a1a; color: #d4af37; padding: 15px; border: 1px solid #d4af37; margin-bottom: 20px; text-align: center; border-radius: 4px;">
-                        {{ session('success') }}
-                    </div>
-                @endif
+    <div style="background: #1a1a1a; color: #d4af37; padding: 15px; border: 1px solid #d4af37; margin-bottom: 20px; text-align: center; border-radius: 4px;">
+        {{ session('success') }}
+    </div>
+@endif
 
-                @if(session('success'))
-                    <div style="background: #d4edda; color: #155724; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
-                        {{ session('success') }}
-                    </div>
-                @endif
+<div class="masafa-form-wrapper">
+    {{-- 1. Success Message --}}
+    @if(session('success'))
+        <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+            {{ session('success') }}
+        </div>
+    @endif
 
-                @if(session('error'))
-                    <div style="background: #f8d7da; color: #721c24; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
-                        {{ session('error') }}
-                    </div>
-                @endif
+    {{-- 2. Error Message (SMTP/Server Errors) --}}
+    @if(session('error'))
+        <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
+            {{ session('error') }}
+        </div>
+    @endif
 
-                @if($errors->any())
-                    <div style="background: #fff3cd; color: #856404; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+    {{-- 3. Validation Errors (e.g., invalid email) --}}
+    @if($errors->any())
+        <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #ffeeba;">
+            <ul style="margin: 0;">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-                <form action="{{ route('contact.store') }}" method="POST" class="masafa-contact-form">
-                    @csrf
-                    ```
+    <form action="{{ route('contact.store') }}" method="POST" class="masafa-contact-form">
+        @csrf
+        
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" name="name" value="{{ old('name') }}" placeholder="Your Name" required>
+            </div>
+            <div class="input-group">
+                <label>Company</label>
+                <input type="text" name="company" value="{{ old('company') }}" placeholder="Company/Operation">
+            </div>
+            <div class="input-group">
+                <label>E-mail</label>
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail address" required>
+            </div>
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="+254 7XX XXX XXX" required>
+            </div>
+        </div>
 
-                ---
+        <div class="input-group full-width">
+            <label>Country / Location of Operation</label>
+            <input type="text" name="location" value="{{ old('location') }}" placeholder="Where is your fleet based?">
+        </div>
 
-                ### 3. Final Check on the Route Name
-                In your Blade file, you have:
-                `route('contact.store')`
+        <div class="input-group full-width">
+            <label>Subject</label>
+            <input type="text" name="subject" value="{{ old('subject') }}" placeholder="e.g., Fleet Expansion or 6-Seater Conversion" required>
+        </div>
 
-                Make sure your `routes/web.php` matches that name exactly:
-                ```php
-                Route::post('/contact-submit', [ContactController::class, 'send'])->name('contact.store');
+        <div class="input-group full-width">
+            <label>Message / Technical Requirements</label>
+            <textarea name="message" rows="5" placeholder="Briefly describe your vehicle needs or terrain challenges..." required>{{ old('message') }}</textarea>
+        </div>
+
+        <button type="submit" class="masafa-submit-btn">Request Technical Quote</button>
+    </form>
+</div>
             </div>
 
             <div class="contact-info-column">
