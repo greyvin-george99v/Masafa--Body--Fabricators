@@ -103,7 +103,7 @@
 
                     <div class="info-block">
                         <span class="info-label">Engineering Inquiries</span>
-                        <p class="info-value">info@masafa.co.ke</p>
+                        <p class="info-value">info@masafamasafabody.com</p>
                     </div>
 
                     <div class="info-block">

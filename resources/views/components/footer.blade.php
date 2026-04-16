@@ -13,7 +13,7 @@
                     <a href="https://web.facebook.com/masafabodyfabricators" class="social-icon" target="_blank" aria-label="Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    
+
                     <a href="https://www.instagram.com/masafa_body_fabricators?igsh=ZTVrOHVleHBnMnpw" class="social-icon" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
@@ -47,7 +47,7 @@
                 <div class="link-column">
                     <h4 class="footer-heading">Contact</h4>
                     <ul>
-                        <li><a href="#">Request a Quote</a></li>
+                        <li><a href="{{ url('/contact') }}">Request a Quote</a></li>
                         <li><a href="#">Workshop Visit</a></li>
                         <li><a href="#">0721 519 537</a></li>
                         <li><address>Thindigua Kiambu Rd,<br>Nairobi, Kenya</address></li>
