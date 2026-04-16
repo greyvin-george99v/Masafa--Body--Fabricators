@@ -7,31 +7,39 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    public function send(Request $request) {
-            $data = $request->validate([
-                'name' => 'required|string',
-                'email' => 'required|email',
-                'subject' => 'required|string',
-                'message' => 'required|string|min:20', // Minimum 20 chars to avoid spam flags
-            ]);
+    public function send(Request $request)
+    {
+        // 1. Basic Validation
+        $data = $request->validate([
+            'name'    => 'required|string|max:255',
+            'email'   => 'required|email',
+            'phone'   => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
 
-            try {
-                \Illuminate\Support\Facades\Mail::html("
-                    <h3>New Technical Inquiry</h3>
-                    <p><strong>Name:</strong> {$data['name']}</p>
-                    <p><strong>Message:</strong><br>{$data['message']}</p>
-                ", function ($message) use ($data) {
-                    $message->to('info@masafabodyfabricators.com')
-                            ->replyTo($data['email'], $data['name'])
-                            ->subject('Masafa Lead: ' . $data['subject']);
-                    
-                    // This header helps bypass "High Probability Spam" filters on cPanel
-                    $message->getHeaders()->addTextHeader('X-Auto-Response-Suppress', 'OOF, AutoReply');
-                });
+        try {
+            // 2. Standard Mail Send (No fancy bells or whistles)
+            Mail::send([], [], function ($message) use ($data) {
+                $message->to('info@masafabodyfabricators.com')
+                        ->from('info@masafabodyfabricators.com', 'Masafa Website')
+                        ->replyTo($data['email'], $data['name'])
+                        ->subject('New Inquiry: ' . $data['subject'])
+                        // Plain text body - hardest for spam filters to trip on
+                        ->setBody(
+                            "New message from: " . $data['name'] . "\n" .
+                            "Email: " . $data['email'] . "\n" .
+                            "Phone: " . $data['phone'] . "\n\n" .
+                            "Message:\n" . $data['message'],
+                            'text/plain'
+                        );
+            });
 
-                return back()->with('success', 'Quote request sent successfully.');
-            } catch (\Exception $e) {
-                return back()->withInput()->with('error', 'Mail Server Error: ' . $e->getMessage());
-            }
+            return back()->with('success', 'Thank you. Your message has been sent.');
+
+        } catch (\Exception $e) {
+            // If it fails, it will show the ACTUAL server error on your screen
+            return back()->withInput()->with('error', 'Mail Error: ' . $e->getMessage());
         }
+    }
 }
