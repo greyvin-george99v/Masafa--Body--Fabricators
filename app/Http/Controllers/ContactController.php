@@ -12,7 +12,6 @@ class ContactController extends Controller
      */
     public function send(Request $request)
     {
-        // 1. Validate the input fields
         $data = $request->validate([
             'name'     => 'required|string|max:255',
             'company'  => 'nullable|string|max:255',
