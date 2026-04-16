@@ -10,12 +10,14 @@
                     East Africa's premier Toyota safari vehicle conversion specialists. Engineering excellence since 2008.
                 </p>
                 <div class="social-links">
-                    <a href="#" class="social-icon" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-icon" target="_blank" aria-label="Facebook">
+                    <a href="https://web.facebook.com/masafabodyfabricators" class="social-icon" target="_blank" aria-label="Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
+                    
+                    <a href="https://www.instagram.com/masafa_body_fabricators?igsh=ZTVrOHVleHBnMnpw" class="social-icon" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    
                 </div>
             </div>
 
@@ -49,7 +51,7 @@
                         <li><a href="#">Workshop Visit</a></li>
                         <li><a href="#">0721 519 537</a></li>
                         <li><address>Thindigua Kiambu Rd,<br>Nairobi, Kenya</address></li>
-                        <li><time>Mon–Fri 07:00–17:00</time></li>
+                        <li><time>Mon–Fri 07:00–17:00 EAT</time></li>
                     </ul>
                 </div>
             </div>
