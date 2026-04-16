@@ -308,21 +308,65 @@ html {
 /* 3. Hero Section */
 /* --- 1. Hero Section Base (Desktop) --- */
 /* --- 1. Hero Section Base (Desktop) --- */
+/* --- 1. Structural Setup --- */
 .hero-section {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(226deg, var(--brand-plum-alt) 0%, rgba(0, 0, 0, 0.80) 100%), 
-              url('../images/hero.jpg') no-repeat center center/cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
-  padding: 80px 20px;
-  
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 80px 20px;
+    overflow: hidden; /* Clips the zoom effect */
+}
+
+/* Background Wrapper - This isolates the animation */
+.hero-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Lowest layer */
+    background-color: #000; /* Safety fallback */
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1);
+    /* Total loop: 21 seconds (7s per image) */
+    animation: zoomFadeLoop 21s linear infinite;
+}
+
+.hero-slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-slide:nth-child(2) {
+    animation-delay: 7s;
+}
+
+.hero-slide:nth-child(3) {
+    animation-delay: 14s;
+}
+
+@keyframes zoomFadeLoop {
+    0% { opacity: 0; transform: scale(1); }
+    5% { opacity: 1; }   /* Quickly fade in */
+    28% { opacity: 1; }  /* Stay visible (roughly 1/3rd of the loop) */
+    38% { opacity: 0; }  /* Fade out before next slide */
+    100% { opacity: 0; transform: scale(1.15); } /* Finish zoom hidden */
 }
 
 /* Grouped Hero styles for other pages */
-.hero-section, 
 .services-hero, 
 .about-hero-section, 
 .gallery-hero-section, 
@@ -333,50 +377,56 @@ html {
     justify-content: center;
 }
 
+/* --- 2. Content Layer (Stays sharp and static) --- */
 .hero-content {
-  max-width: 900px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
+    position: relative;
+    z-index: 10; /* Sits firmly on top of the background */
+    max-width: 900px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    pointer-events: none; /* Allows clicks to pass through empty spaces */
 }
 
 .hero-title {
-  color: var(--white);
-  font-family: var(--font-serif);
-  font-size: 80px;
-  font-weight: 700;
-  line-height: 1.01;
-  opacity: 0;
+    color: var(--white);
+    font-family: var(--font-serif);
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.01;
+    opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease forwards;
 }
 
 .italic-brand {
-  color: var(--brand-peach);
-  font-family: var(--font-italic);
-  font-style: italic;
-  font-weight: 600;
+    color: var(--brand-peach);
+    font-family: var(--font-italic);
+    font-style: italic;
+    font-weight: 600;
 }
 
 .hero-description {
-  color: var(--text-gray);
-  font-size: 18px;
-  line-height: 1.6;
-  opacity: 0;
+    color: var(--text-gray);
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards 0.3s;
 }
 
-/* --- 2. Buttons --- */
+/* --- 3. Buttons --- */
 .hero-btns {
-  display: flex;
-  gap: 25px;
-  opacity: 0;
+    pointer-events: auto; /* Ensures buttons remain clickable */
+    display: flex;
+    gap: 25px;
+    opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards 0.6s;
 }
+
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -385,23 +435,23 @@ html {
 }
 
 .btn-primary {
-  background: var(--brand-peach);
-  color: var(--brand-plum);
-  text-decoration: none;
-  padding: 20px 30px;
-  font-size: 18px;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 4px 15px rgba(248, 188, 128, 0);
+    background: var(--brand-peach);
+    color: var(--brand-plum);
+    text-decoration: none;
+    padding: 20px 30px;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(248, 188, 128, 0);
 }
 
 .btn-secondary {
-  outline: 1px solid var(--brand-peach);
-  color: var(--white);
-  text-decoration: none;
-  padding: 20px 30px;
-  font-size: 18px;
-  font-weight: 700;
-  position: relative;
+    outline: 1px solid var(--brand-peach);
+    color: var(--white);
+    text-decoration: none;
+    padding: 20px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
     overflow: hidden;
     transition: 0.4s ease;
 }
@@ -413,26 +463,20 @@ html {
 }
 
 .btn-secondary:hover {
-  background: #F8BC80;
+    background: #F8BC80;
     color: #5C0935;
     border-color: #F8BC80;
 }
 
+/* --- 4. Responsive --- */
 @media (max-width: 992px) {
-    .hero-section, 
-    .services-hero, 
-    .about-hero-section, 
-    .gallery-hero-section, 
-    .contacts-hero-section {
+    .hero-section {
         padding-top: 100px;
         padding-bottom: 60px;
         min-height: 85vh;
     }
 
-    .hero-content {
-        margin-top: 0;
-        gap: 30px;
-    }
+    .hero-content { gap: 30px; }
 
     .hero-title {
         font-size: 48px;
@@ -440,13 +484,10 @@ html {
     }
 
     .hero-title br, 
-    .hero-description br {
-        display: none;
-    }
+    .hero-description br { display: none; }
 
     .hero-description {
         font-size: 16px;
-        max-width: 100%;
         padding: 0 10px;
     }
 
@@ -456,23 +497,10 @@ html {
         max-width: 320px;
         gap: 15px;
     }
-
-    .btn-primary, 
-    .btn-secondary {
-        width: 100%;
-        text-align: center;
-        padding: 18px 20px;
-    }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 38px;
-    }
-    
-    .hero-content {
-        gap: 25px;
-    }
+    .hero-title { font-size: 38px; }
 }
 
 /* --- About Section --- */

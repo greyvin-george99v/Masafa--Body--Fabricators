@@ -3,12 +3,14 @@
 @section('title', 'Contacts | Masafa Specialist Land Cruiser Conversions')
 
 @section('content')
-<section class="contacts-hero-section">
-    <div class="contacts-hero-content">
-        <h1 class="contacts-title">CONTACTS</h1>
-        <p class="contacts-subtitle">
-            Consult with our Land Cruiser Specialists regarding your fleet requirements.
-        </p>
+<section class="gallery-hero-section">
+    <div class="hero-overlay">
+        <div class="container hero-content-wrapper">
+            <h1 class="gallery-headline">CONTACTS</h1>
+            <p class="gallery-subheadline">
+                Consult with our Land Cruiser Specialists regarding your fleet requirements.
+            </p>
+        </div>
     </div>
 </section>
 
