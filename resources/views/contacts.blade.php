@@ -25,44 +25,50 @@
                     <h2 class="heading-black">Initialize your <span class="italic-plum">project.</span></h2>
                 </div>
 
-                <form action="" class="masafa-contact-form">
-                    @csrf
-                    <div class="form-grid">
-                        <div class="input-group">
-                            <label>Full Name</label>
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Company</label>
-                            <input type="text" name="company" placeholder="Company/Operation">
-                        </div>
-                        <div class="input-group">
-                            <label>E-mail</label>
-                            <input type="email" name="email" placeholder="E-mail address" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Phone Number</label>
-                            <input type="tel" name="phone" placeholder="+254 7XX XXX XXX" required>
-                        </div>
-                    </div>
+                @if(session('success'))
+    <div style="background: #1a1a1a; color: #d4af37; padding: 15px; border: 1px solid #d4af37; margin-bottom: 20px; text-align: center; border-radius: 4px;">
+        {{ session('success') }}
+    </div>
+@endif
 
-                    <div class="input-group full-width">
-                        <label>Country / Location of Operation</label>
-                        <input type="text" name="location" placeholder="Where is your fleet based?">
-                    </div>
+        <form action="{{ route('contact.store') }}" method="POST" class="masafa-contact-form">
+            @csrf
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <label>Company</label>
+                    <input type="text" name="company" placeholder="Company/Operation">
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" name="email" placeholder="E-mail address" required>
+                </div>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="+254 7XX XXX XXX" required>
+                </div>
+            </div>
 
-                    <div class="input-group full-width">
-                        <label>Subject</label>
-                        <input type="text" name="subject" placeholder="e.g., Fleet Expansion or 6-Seater Conversion" required>
-                    </div>
+            <div class="input-group full-width">
+                <label>Country / Location of Operation</label>
+                <input type="text" name="location" placeholder="Where is your fleet based?">
+            </div>
 
-                    <div class="input-group full-width">
-                        <label>Message / Technical Requirements</label>
-                        <textarea name="message" rows="5" placeholder="Briefly describe your vehicle needs or terrain challenges..." required></textarea>
-                    </div>
+            <div class="input-group full-width">
+                <label>Subject</label>
+                <input type="text" name="subject" placeholder="e.g., Fleet Expansion or 6-Seater Conversion" required>
+            </div>
 
-                    <button type="submit" class="masafa-submit-btn">Request Technical Quote</button>
-                </form>
+            <div class="input-group full-width">
+                <label>Message / Technical Requirements</label>
+                <textarea name="message" rows="5" placeholder="Briefly describe your vehicle needs or terrain challenges..." required></textarea>
+            </div>
+
+            <button type="submit" class="masafa-submit-btn">Request Technical Quote</button>
+        </form>
             </div>
 
             <div class="contact-info-column">
