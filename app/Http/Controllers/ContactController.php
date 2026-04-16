@@ -44,7 +44,7 @@ class ContactController extends Controller
             Log::error('Contact Form Error: ' . $e->getMessage());
             
             return back()->withInput()
-                         ->with('error', 'Sorry, we could not send your message right now. Please try again or call us directly.');
+                         ->with('error', 'Mail Error: ' . $e->getMessage());
         }
     }
 }
