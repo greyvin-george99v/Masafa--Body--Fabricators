@@ -46,15 +46,16 @@ class ContactController extends Controller
             return back()->with('success', 'Your request has been received. Our technical team will get back to you shortly.');
 
         } catch (\Exception $e) {
-            // Log the full error so you can check storage/logs/laravel.log
+            // Log for later checking
             Log::error('Contact Form Mail Failed', [
                 'error' => $e->getMessage(),
                 'trace' => $e->getTraceAsString(),
-                'data'  => $data
+                'data'  => $data ?? null
             ]);
 
+            // TEMPORARY: Show the ACTUAL error to you
             return back()->withInput()
-                         ->with('error', 'Sorry, we could not send your message right now. Please try again later.');
+                         ->with('error', 'Mail Error: ' . $e->getMessage());
         }
     }
 }
