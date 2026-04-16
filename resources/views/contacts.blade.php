@@ -31,70 +31,59 @@
     </div>
 @endif
 
-<div class="masafa-form-wrapper">
-    {{-- 1. Success Message --}}
+<div class="masafa-form-section">
+    {{-- Alerts - Styled to sit outside the form grid --}}
     @if(session('success'))
-        <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+        <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #c3e6cb; font-family: sans-serif;">
             {{ session('success') }}
         </div>
     @endif
 
-    {{-- 2. Error Message (SMTP/Server Errors) --}}
     @if(session('error'))
-        <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
+        <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #f5c6cb; font-family: sans-serif;">
             {{ session('error') }}
         </div>
     @endif
 
-    {{-- 3. Validation Errors (e.g., invalid email) --}}
-    @if($errors->any())
-        <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #ffeeba;">
-            <ul style="margin: 0;">
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <form action="{{ route('contact.store') }}" method="POST" class="masafa-contact-form">
-        @csrf
+    <form class="contact-form" action="{{ route('contact.store') }}" method="POST">
+        @csrf 
         
-        <div class="form-grid">
-            <div class="input-group">
+        {{-- IMPORTANT: Controller needs this field to pass validation --}}
+        <input type="hidden" name="location" value="Homepage Inquiry">
+
+        <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 15px;">
+            <div class="form-group" style="flex: 1;">
                 <label>Full Name</label>
-                <input type="text" name="name" value="{{ old('name') }}" placeholder="Your Name" required>
+                <input type="text" name="name" value="{{ old('name') }}" placeholder="Your Name" class="input-field" required style="width: 100%;">
             </div>
-            <div class="input-group">
+            <div class="form-group" style="flex: 1;">
                 <label>Company</label>
-                <input type="text" name="company" value="{{ old('company') }}" placeholder="Company/Operation">
+                <input type="text" name="company" value="{{ old('company') }}" placeholder="Company/Operation" class="input-field" style="width: 100%;">
             </div>
-            <div class="input-group">
+        </div>
+
+        <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 15px;">
+            <div class="form-group" style="flex: 1;">
                 <label>E-mail</label>
-                <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail address" required>
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail address" class="input-field" required style="width: 100%;">
             </div>
-            <div class="input-group">
+            <div class="form-group" style="flex: 1;">
                 <label>Phone Number</label>
-                <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="+254 7XX XXX XXX" required>
+                <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="+254..." class="input-field" required style="width: 100%;">
             </div>
         </div>
 
-        <div class="input-group full-width">
-            <label>Country / Location of Operation</label>
-            <input type="text" name="location" value="{{ old('location') }}" placeholder="Where is your fleet based?">
-        </div>
-
-        <div class="input-group full-width">
+        <div class="form-group" style="margin-bottom: 15px;">
             <label>Subject</label>
-            <input type="text" name="subject" value="{{ old('subject') }}" placeholder="e.g., Fleet Expansion or 6-Seater Conversion" required>
+            <input type="text" name="subject" value="{{ old('subject') }}" placeholder="e.g. Fleet Expansion" class="input-field" required style="width: 100%;">
         </div>
 
-        <div class="input-group full-width">
-            <label>Message / Technical Requirements</label>
-            <textarea name="message" rows="5" placeholder="Briefly describe your vehicle needs or terrain challenges..." required>{{ old('message') }}</textarea>
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label>Message</label>
+            <textarea name="message" placeholder="Describe your technical requirements..." class="input-field message-area" required style="width: 100%; min-height: 120px;">{{ old('message') }}</textarea>
         </div>
 
-        <button type="submit" class="masafa-submit-btn">Request Technical Quote</button>
+        <button type="submit" class="submit-btn" style="cursor: pointer;">Get Technical Quote</button>
     </form>
 </div>
             </div>
