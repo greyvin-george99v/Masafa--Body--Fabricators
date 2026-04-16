@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
-@section('title', 'Contacts')
+@section('title', 'Contacts | Masafa Specialist Land Cruiser Conversions')
 
 @section('content')
 <section class="contacts-hero-section">
-        <div class="contacts-hero-content">
-            <h1 class="contacts-title">CONTACTS</h1>
-            <p class="contacts-subtitle">
-                Get in touch with our Land Cruiser Specialists </p>
-        </div>
-    </section>
-    
-    <section class="contact-form-section">
+    <div class="contacts-hero-content">
+        <h1 class="contacts-title">CONTACTS</h1>
+        <p class="contacts-subtitle">
+            Consult with our Land Cruiser Specialists regarding your fleet requirements.
+        </p>
+    </div>
+</section>
+
+<section class="contact-form-section reveal-on-scroll">
     <div class="contact-main-wrapper">
         
         <div class="contact-content-row">
@@ -19,45 +20,46 @@
             <div class="contact-form-column">
                 <div class="section-header">
                     <span class="label-plum">SEND MESSAGE</span>
-                    <h2 class="heading-black">Tell us what <span class="italic-plum">you need.</span></h2>
+                    <h2 class="heading-black">Initialize your <span class="italic-plum">project.</span></h2>
                 </div>
 
-                <form action="#" class="masafa-contact-form">
+                <form action="" class="masafa-contact-form">
+                    @csrf
                     <div class="form-grid">
                         <div class="input-group">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Your Name">
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="input-group">
                             <label>Company</label>
-                            <input type="text" placeholder="Company/Operation">
+                            <input type="text" name="company" placeholder="Company/Operation">
                         </div>
                         <div class="input-group">
                             <label>E-mail</label>
-                            <input type="email" placeholder="E-mail address">
+                            <input type="email" name="email" placeholder="E-mail address" required>
                         </div>
                         <div class="input-group">
                             <label>Phone Number</label>
-                            <input type="text" placeholder="+254 700 000 00">
+                            <input type="tel" name="phone" placeholder="+254 7XX XXX XXX" required>
                         </div>
                     </div>
 
                     <div class="input-group full-width">
-                        <label>Country / Location</label>
-                        <input type="text" placeholder="Where is your operation based?">
+                        <label>Country / Location of Operation</label>
+                        <input type="text" name="location" placeholder="Where is your fleet based?">
                     </div>
 
                     <div class="input-group full-width">
                         <label>Subject</label>
-                        <input type="text">
+                        <input type="text" name="subject" placeholder="e.g., Fleet Expansion or 6-Seater Conversion" required>
                     </div>
 
                     <div class="input-group full-width">
-                        <label>Message</label>
-                        <textarea rows="5"></textarea>
+                        <label>Message / Technical Requirements</label>
+                        <textarea name="message" rows="5" placeholder="Briefly describe your vehicle needs or terrain challenges..." required></textarea>
                     </div>
 
-                    <button type="submit" class="masafa-submit-btn">Submit Request</button>
+                    <button type="submit" class="masafa-submit-btn">Request Technical Quote</button>
                 </form>
             </div>
 
@@ -69,29 +71,29 @@
 
                 <div class="info-details-stack">
                     <div class="info-block">
-                        <span class="info-label">Phone</span>
+                        <span class="info-label">Direct Line</span>
                         <p class="info-value">+254 721 519 537</p>
-                        <p class="info-sub">Mon–Fri: 07:00–17:00 EAT<br>Saturday: 8:00–12:00<</p>
+                        <p class="info-sub">Mon–Fri: 07:00–17:00 EAT<br>Saturday: 08:00–12:00 EAT</p>
                     </div>
 
                     <div class="info-block">
-                        <span class="info-label">Email</span>
-                        <p class="info-value">info@masafabodyfabri.co.ke</p>
+                        <span class="info-label">Engineering Inquiries</span>
+                        <p class="info-value">info@masafa.co.ke</p>
                     </div>
 
                     <div class="info-block">
                         <span class="info-label">Workshop Address</span>
                         <p class="info-value">Thindigua Kiambu Rd, Opposite<br>The Green Zone Apartments<br>Nairobi, Kenya</p>
-                        <p class="info-sub">Workshop visits by appointment</p>
+                        <p class="info-sub">Workshop inspections by appointment only</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="contact-map-container">
-             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.946327045353!2d36.8378516!3d-1.2057914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3fb8f3956425%3A0x633d2627e7f9f38c!2sThe%20Green%20Zone%20Apartments!5e0!3m2!1sen!2ske!4v1712650000000!5m2!1sen!2ske" 
-                width="1200" 
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.74837564619!2d36.8378!3d-1.2215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f170000000000%3A0x0!2zMcKwMTMnMTcuNCJTIDM2wrA1MCcxNi4xIkU!5e0!3m2!1sen!2ske!4v1710000000000!5m2!1sen!2ske" 
+                width="100%" 
                 height="500" 
                 style="border:0;" 
                 allowfullscreen="" 
@@ -101,5 +103,4 @@
 
     </div>
 </section>
-
 @endsection
