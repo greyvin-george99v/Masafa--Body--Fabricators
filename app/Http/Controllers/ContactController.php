@@ -41,7 +41,6 @@ class ContactController extends Controller
             // 3. Send the Mail
             Mail::raw($emailBody, function ($message) use ($data) {
                 $message->to('info@masafabodyfabricators.com')
-                        ->from('info@masafabodyfabricators.com', 'Masafa Body Fabricators')
                         ->replyTo($data['email'], $data['name'])
                         ->subject('Technical Quote Request: ' . $data['subject']);
             });
