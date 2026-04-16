@@ -38,13 +38,14 @@ class ContactController extends Controller
                         ->subject('New Quote Request: ' . $data['subject']);
             });
 
+            // Only one success message (green one)
             return back()->with('success', 'Thank you! Your quote request has been sent successfully.');
 
         } catch (\Exception $e) {
-            Log::error('Contact Form Error: ' . $e->getMessage());
-            
+            Log::error('Brevo Mail Error', ['message' => $e->getMessage()]);
+
             return back()->withInput()
-                         ->with('error', 'Mail Error: ' . $e->getMessage());
+                         ->with('error', 'Sorry, we could not send your message right now. Please try again or call us directly.');
         }
     }
 }
