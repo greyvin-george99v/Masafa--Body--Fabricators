@@ -13,3 +13,5 @@ Route::view('/contacts', 'contacts')->name('contacts');
 
 // Legal
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
+
+Route::post('/contact-submit', [ContactController::class, 'send'])->name('contact.store');

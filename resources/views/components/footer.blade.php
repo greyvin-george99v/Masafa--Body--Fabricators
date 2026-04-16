@@ -21,6 +21,16 @@
 
             <div class="footer-links-grid">
                 <div class="link-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/services') }}">Services</a></li>
+                        <li><a href="{{ url('/about') }}">About</a></li>
+                        <li><a href="{{ url('/gallery') }}">Gallery</a></li>
+                        <li><a href="{{ url('/contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
                     <h4 class="footer-heading">Services</h4>
                     <ul>
                         <li><a href="#">Safari Vehicle Conversions</a></li>
@@ -31,15 +41,6 @@
                     </ul>
                 </div>
 
-                <div class="link-column">
-                    <h4 class="footer-heading">Company</h4>
-                    <ul>
-                        <li><a href="#">About Masafa</a></li>
-                        <li><a href="#">Our Workshop</a></li>
-                        <li><a href="#">The Team</a></li>
-                        <li><a href="#">Certifications</a></li>
-                    </ul>
-                </div>
 
                 <div class="link-column">
                     <h4 class="footer-heading">Contact</h4>
