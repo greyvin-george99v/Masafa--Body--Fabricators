@@ -16,3 +16,21 @@ Route::view('/contacts', 'contacts')->name('contacts');
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
 
 Route::post('/contact-submit', [ContactController::class, 'send'])->name('contact.store');
+
+Route::get('/clear-config', function() {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    return 'Cleared!';
+});
+
+Route::get('/test-mail', function () {
+    try {
+        Mail::raw('Test email from Masafa site', function ($message) {
+            $message->to('info@masafabodyfabricators.com')
+                    ->subject('SMTP Test');
+        });
+        return 'Mail sent successfully!';
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage();
+    }
+});
