@@ -310,47 +310,71 @@
             </div>
         </div>
 
-        @if(session('success'))
-              <div class="alert alert-success" style="color: #28a745; margin-bottom: 20px; font-weight: bold;">
-                  {{ session('success') }}
-              </div>
-          @endif
+        {{-- 1. Success Message --}}
+@if(session('success'))
+    <div class="alert alert-success" style="color: #28a745; background: #eafaf1; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-weight: bold; border: 1px solid #28a745;">
+        {{ session('success') }}
+    </div>
+@endif
 
-          <form class="contact-form" action="{{ route('contact.store') }}" method="POST">
-              @csrf <div class="form-row">
-                  <div class="form-group">
-                      <label>Full Name</label>
-                      <input type="text" name="name" placeholder="Your Name" class="input-field" required>
-                  </div>
-                  <div class="form-group">
-                      <label>Company</label>
-                      <input type="text" name="company" placeholder="Company/Operation" class="input-field">
-                  </div>
-              </div>
+{{-- 2. Error Message (This was missing!) --}}
+@if(session('error'))
+    <div class="alert alert-danger" style="color: #721c24; background: #f8d7da; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-weight: bold; border: 1px solid #f5c6cb;">
+        {{ session('error') }}
+    </div>
+@endif
 
-              <div class="form-row">
-                  <div class="form-group">
-                      <label>E-mail</label>
-                      <input type="email" name="email" placeholder="E-mail address" class="input-field" required>
-                  </div>
-                  <div class="form-group">
-                      <label>Phone Number</label>
-                      <input type="tel" name="phone" placeholder="e.g. +254..." class="input-field">
-                  </div>
-              </div>
+{{-- 3. Validation Errors --}}
+@if($errors->any())
+    <div class="alert alert-warning" style="color: #856404; background: #fff3cd; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #ffeeba;">
+        <ul style="margin: 0;">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-              <div class="form-group">
-                  <label>Subject</label>
-                  <input type="text" name="subject" placeholder="e.g. Fleet Expansion or Custom Expedition Build" class="input-field" required>
-              </div>
+<form class="contact-form" action="{{ route('contact.store') }}" method="POST">
+    @csrf 
+    
+    {{-- Hidden location field so the Controller doesn't crash if it's required --}}
+    <input type="hidden" name="location" value="Homepage Inquiry">
 
-              <div class="form-group">
-                  <label>Message</label>
-                  <textarea name="message" placeholder="Describe your terrain challenges or specific seating and power needs..." class="input-field message-area" required></textarea>
-              </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" value="{{ old('name') }}" placeholder="Your Name" class="input-field" required>
+        </div>
+        <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company" value="{{ old('company') }}" placeholder="Company/Operation" class="input-field">
+        </div>
+    </div>
 
-              <button type="submit" class="submit-btn">Get Technical Quote</button>
-          </form>
+    <div class="form-row">
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail address" class="input-field" required>
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="e.g. +254..." class="input-field" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Subject</label>
+        <input type="text" name="subject" value="{{ old('subject') }}" placeholder="e.g. Fleet Expansion or Custom Expedition Build" class="input-field" required>
+    </div>
+
+    <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" placeholder="Describe your terrain challenges or specific seating and power needs..." class="input-field message-area" required>{{ old('message') }}</textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Get Technical Quote</button>
+</form>
     </div>
 </section>
 
