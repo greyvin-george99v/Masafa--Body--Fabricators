@@ -46,7 +46,7 @@
                 <span class="text-italic-plum">Story</span>
             </h2>
             <div class="story-copy">
-                <p>Established in 2008 in Nairobi, Masafa was born from a decade of observation in the harshest environments of the African bush. We witnessed a recurring pattern: standard safari vehicles failing under pressure.</p>
+                <p>Established in 2026 in Nairobi, Masafa was born from a decade of observation in the harshest environments of the African bush. We witnessed a recurring pattern: standard safari vehicles failing under pressure.</p>
                 
                 <p>These breakdowns were rarely mechanical; they were structural. Standard bodies, chassis extensions, and interior fittings simply weren't designed to withstand the relentless vibrations and skeletal stress of long-range off-road expeditions.</p>
                 
