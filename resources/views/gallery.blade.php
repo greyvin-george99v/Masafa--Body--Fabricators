@@ -24,13 +24,13 @@
             </p>
         </div>
 
-        <div class="filter-bar">
+        <!--<div class="filter-bar">
             <button class="filter-pill active" data-filter="all">All Builds</button>
             <button class="filter-pill" data-filter="game-viewers">Game Viewers</button>
             <button class="filter-pill" data-filter="conversions">Chassis Conversions</button>
             <button class="filter-pill" data-filter="projects">Special Projects</button>
         </div>
-
+        -->
         <div class="showcase-grid">
             <img src="{{ asset('images/p-1 (1).jpg') }}" class="gallery-img game-viewers" alt="Masafa Game Viewer Conversion">
             <img src="{{ asset('images/p-1 (2).jpg') }}" class="gallery-img conversions" alt="Structural Chassis Extension">

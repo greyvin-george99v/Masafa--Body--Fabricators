@@ -98,3 +98,4 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal-on-scroll').forEach(section => {
     observer.observe(section);
 });
+
