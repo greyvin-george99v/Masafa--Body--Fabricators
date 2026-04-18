@@ -7,7 +7,7 @@
                     <img class="logo" src="{{ asset('images/Masafa Logo.png') }}" alt="Masafa Logo">
                 </a>
                 <p class="brand-bio">
-                    East Africa's premier Toyota safari vehicle conversion specialists. Engineering excellence since 2008.
+                    East Africa's premier Toyota safari vehicle conversion specialists. Engineering excellence since 2016.
                 </p>
                 <div class="social-links">
                     <a href="https://web.facebook.com/masafabodyfabricators" class="social-icon" target="_blank" aria-label="Facebook">
@@ -58,7 +58,7 @@
 
         </div>
     </div>
-
+<hr class="section-divider">
     <div class="footer-bottom">
         <p>&copy; 2026 Masafa Body Fabricators. All rights reserved.</p>
     </div>

@@ -1945,16 +1945,23 @@ html {
     font-weight: 400;
 }
 
+.section-divider {
+  border: none;
+  border-top: 0.5px solid #ACACAC;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* --- Footer Bottom Bar --- */
 .footer-bottom {
-    background: var(--brand-peach);
+    background: #3A051F;
     padding: 15px 0;
     width: 100%;
     text-align: center;
 }
 
 .footer-bottom p {
-    color: var(--brand-plum);
+    color: #FBFBFB;
     font-family: var(--font-main); /* Restoring DM Sans */
     font-size: 14px;
     margin: 0;

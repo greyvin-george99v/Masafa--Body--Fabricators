@@ -5,9 +5,9 @@
 @section('content')
 <section class="hero-section">
     <div class="hero-bg-wrapper">
-        <div class="hero-slide" style="background-image: linear-gradient(226deg, var(--brand-plum-alt) 0%, rgba(0, 0, 0, 0.8) 100%), url('{{ asset('images/hero.jpg') }}');"></div>
-        <div class="hero-slide" style="background-image: linear-gradient(226deg, var(--brand-plum-alt) 0%, rgba(0, 0, 0, 0.8) 100%), url('{{ asset('images/49.jpg') }}');"></div>
-        <div class="hero-slide" style="background-image: linear-gradient(226deg, var(--brand-plum-alt) 0%, rgba(0, 0, 0, 0.8) 100%), url('{{ asset('images/p-1 (2).jpg') }}');"></div>    
+        <div class="hero-slide" style="background-image: linear-gradient(226deg, rgba(0, 0, 0, 0.8) 0%, rgba(39, 39, 39, 0.8) 100%), url('{{ asset('images/hero.jpg') }}');"></div>
+        <div class="hero-slide" style="background-image: linear-gradient(226deg, rgba(0, 0, 0, 0.8) 0%, rgba(39, 39, 39, 0.8) 100%), url('{{ asset('images/49.jpg') }}');"></div>
+        <div class="hero-slide" style="background-image: linear-gradient(226deg, rgba(0, 0, 0, 0.8) 0%, rgba(39, 39, 39, 0.8) 100%), url('{{ asset('images/p-1 (2).jpg') }}');"></div>    
     </div>
 
     <div class="hero-content">
