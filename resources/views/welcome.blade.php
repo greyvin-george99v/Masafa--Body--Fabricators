@@ -30,6 +30,29 @@
     </div>
 </section>
 
+<section class="fleet-scroll-section">
+    <div class="fleet-container">
+        <h2 class="fleet-title">Featured Fleet Solutions</h2>
+        
+        <div class="fleet-slider">
+            <div class="fleet-track">
+                <img src="{{ asset('images/9.jpg') }}"  alt="Masafa Build 4">
+                <img src="{{ asset('images/9.jpg') }}" alt="Masafa Build 1">
+                <img src="{{ asset('images/15.jpg') }}"  alt="Masafa Build 2">
+                <img src="{{ asset('images/13.jpg') }}"  alt="Masafa Build 3">
+                <img src="{{ asset('images/10.jpg') }}"  alt="Masafa Build 4">
+                <img src="{{ asset('images/12.jpg') }}"  alt="Masafa Build 1">
+                <img src="{{ asset('images/11.jpg') }}"  alt="Masafa Build 2">
+                <img src="{{ asset('images/14.jpg') }}"  alt="Masafa Build 3">
+                <img src="{{ asset('images/9.jpg') }}"  alt="Masafa Build 4">
+                <img src="{{ asset('images/15.jpg') }}"  alt="Masafa Build 2">
+                <img src="{{ asset('images/10.jpg') }}"  alt="Masafa Build 4">
+                <img src="{{ asset('images/12.jpg') }}"  alt="Masafa Build 1">
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="about-section reveal-on-scroll">
     <div class="about-container">
         <div class="about-image">
@@ -40,14 +63,14 @@
             <div class="section-header">
                 <span class="sub-headline" style="color: #000000;">Who We Are</span>
                 <h2 class="section-title">
-                    Engineered <span class="italic-plum">for the wild.</span>
+                    Engineering for Africa’s<span class="italic-plum">Toughest Expeditions.</span>
                 </h2>
             </div>
             
             <p class="about-text">
-                Masafa was founded in 2008 after watching standard safari vehicles fail repeatedly in the African bush. 
-                Beyond just engines, we realized that bodies, chassis, and fittings were never truly engineered for 
-                this terrain. We specialize exclusively in Toyota Land Cruisers to change that standard.
+                Since 2016, Masafa has been the silent backbone of East African tourism.
+                We don’t just build bodies; we re-engineer the Toyota Land Cruiser
+                70-Series to withstand the relentless demands of the African bush.
             </p>
 
             <a href="{{ url('/about') }}" class="btn-story">OUR STORY</a>

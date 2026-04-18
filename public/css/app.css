@@ -139,6 +139,7 @@ html {
 
 .nav-cta {
     background: var(--brand-peach);
+    border-radius: 10px;
     color: var(--brand-plum);
     text-decoration: none;
     padding: 12px 24px;
@@ -503,10 +504,92 @@ html {
     .hero-title { font-size: 38px; }
 }
 
+/* --- Fleet Scroll Section --- */
+/* Update the Section */
+.fleet-scroll-section {
+    width: 100%;
+    padding: 80px 0;
+    background: #3A051F;
+    overflow: hidden;
+    display: flex;       /* Added to help vertical stacking */
+    flex-direction: column;
+    align-items: center;
+}
+
+.fleet-title {
+    color: #ffffff;
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+/* Update the Container */
+.fleet-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 50px;
+}
+
+.fleet-track img {
+    /* STRICT FIGMA DIMENSIONS */
+    width: 384px !important;
+    height: 279px !important;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevents images from stretching/shrinking */
+    display: block;
+}
+
+.fleet-slider {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Update the Track */
+.fleet-track {
+    display: flex;
+    gap: 20px;
+    /* Ensure the animation distance matches the actual width of 4 images + gaps */
+    animation: scroll 25s linear infinite;
+}
+
+/* Adjust Animation Distance */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { 
+        /* Move by (Image Width + Gap) * Number of original images */
+        transform: translateX(calc(-384px * 4 - 80px)); 
+    }
+}
+
+.fleet-slider:hover .fleet-track {
+    animation-play-state: paused;
+}
+
+/* Responsive Tweak */
+@media (max-width: 768px) {
+    .fleet-title {
+        font-size: 34px;
+    }
+    .fleet-track img {
+        width: 280px;
+        height: 200px;
+    }
+    @keyframes scroll {
+        100% { transform: translateX(calc(-280px * 4 - 80px)); }
+    }
+}
+
+
 /* --- About Section --- */
 .about-section {
     width: 100%;
-    padding: 100px 0;
+    padding: 140px 0;
     background: var(--white);
     display: flex;
     justify-content: center;
@@ -520,7 +603,7 @@ html {
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Ensures Image and Content align at the top */
     gap: 60px;
 }
 
@@ -605,6 +688,7 @@ html {
 .btn-story {
     display: inline-block;
     padding: 14px 32px;
+    border-radius: 10px;
     background: var(--brand-plum);
     color: var(--white);
     text-decoration: none;
