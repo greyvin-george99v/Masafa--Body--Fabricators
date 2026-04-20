@@ -83,7 +83,7 @@
             <textarea name="message" placeholder="Describe your technical requirements..." class="input-field message-area" required style="width: 100%; min-height: 120px;">{{ old('message') }}</textarea>
         </div>
 
-        <button type="submit" class="submit-btn" style="cursor: pointer;">Get Technical Quote</button>
+        <button type="submit" class="submit-btn" style="cursor: pointer;">Submit</button>
     </form>
 </div>
             </div>

@@ -73,7 +73,7 @@
                 70-Series to withstand the relentless demands of the African bush.
             </p>
 
-            <a href="{{ url('/about') }}" class="btn-story">OUR STORY</a>
+            <a href="{{ url('/about') }}" class="btn-story">Learn More</a>
         </div>
     </div>
 </section>
@@ -395,7 +395,7 @@
                     <textarea name="message" placeholder="Describe your terrain challenges or specific seating and power needs..." class="input-field message-area" required>{{ old('message') }}</textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Get Technical Quote</button>
+                <button type="submit" class="submit-btn">Submit</button>
             </form>
         </div>
     </div>
