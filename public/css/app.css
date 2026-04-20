@@ -1692,29 +1692,62 @@ html {
 }
 
 /* --- RESPONSIVE CODE --- */
+/* --- Masafa Form Responsive Fix --- */
+
 @media (max-width: 1100px) {
     .contact-container {
         flex-direction: column;
         align-items: center;
-        text-align: center;
         gap: 60px;
-        padding: 0 40px;
         width: 100%;
+        padding: 0 40px; /* Standard tablet padding */
     }
 
-    .contact-info, .contact-form {
+    /* Target the wrapper and the form directly */
+    .contact-form-wrapper, 
+    .contact-form {
+        width: 100% !important; /* Forces full width of container */
+        max-width: 100% !important; /* Removes the 850px restriction */
+    }
+
+    .contact-info {
         width: 100%;
         max-width: 850px;
+        text-align: center;
     }
 
-    /* Center text for responsive views */
-    .contact-section .contact-header,
-    .contact-section .sub-headline.plum,
-    .contact-section .section-title,
-    .contact-description {
-        align-items: center;
+    /* Keeps labels and inputs left-aligned for readability while container is centered */
+    .form-group {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .form-group label {
+        text-align: left;
+        width: 100%;
+    }
+
+    .input-field {
+        text-align: left;
+        width: 100%;
+    }
+
+    .contact-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
         text-align: center !important;
-        align-self: center;
+        width: 100% !important;
+    }
+
+    /* 2. Ensure the individual text elements stretch and center */
+    .contact-section .sub-headline.plum, 
+    .contact-header .section-title {
+        text-align: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
     }
 
     .benefit-pills {
@@ -1727,10 +1760,29 @@ html {
     .contact-container {
         padding: 0 20px;
     }
+    
+    .contact-form-wrapper,
+    .contact-form {
+        padding: 0;
+    }
 
     .form-row {
         flex-direction: column;
         gap: 16px;
+    }
+
+    .benefit-pills {
+        gap: 10px;
+        flex-wrap: wrap; /* Ensures pills don't break the layout on small screens */
+    }
+    
+    .pill {
+        font-size: 13px;
+    }
+
+    /* Ensure the submit button also takes full width on mobile */
+    .submit-btn {
+        width: 100%;
     }
 }
 

@@ -109,7 +109,7 @@
                     <div class="info-block">
                         <span class="info-label">Workshop Address</span>
                         <p class="info-value">Thindigua Kiambu Rd, Opposite<br>The Green Zone Apartments<br>Nairobi, Kenya</p>
-                        <p class="info-sub">Workshop inspections by appointment only</p>
+                        <!--<p class="info-sub">Workshop inspections by appointment only</p>-->
                     </div>
                 </div>
             </div>
