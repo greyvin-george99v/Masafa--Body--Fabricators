@@ -42,7 +42,7 @@ class ContactController extends Controller
             return back()->with('success', 'Thank you! Your quote request has been sent successfully.');
 
         } catch (\Exception $e) {
-            Log::error('Brevo Mail Error', ['message' => $e->getMessage()]);
+            Log::error('cPanel SMTP Mail Error', ['message' => $e->getMessage()]);
 
             return back()->withInput()
                          ->with('error', 'Sorry, we could not send your message right now. Please try again or call us directly.');
