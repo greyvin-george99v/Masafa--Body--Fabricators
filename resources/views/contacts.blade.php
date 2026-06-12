@@ -25,14 +25,7 @@
                     <h2 class="heading-black">Initialize your <span class="italic-plum">project.</span></h2>
                 </div>
 
-                @if(session('success'))
-    <div style="background: #1a1a1a; color: #d4af37; padding: 15px; border: 1px solid #d4af37; margin-bottom: 20px; text-align: center; border-radius: 4px;">
-        {{ session('success') }}
-    </div>
-@endif
-
 <div class="masafa-form-section">
-    {{-- Alerts - Styled to sit outside the form grid --}}
     @if(session('success'))
         <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #c3e6cb; font-family: sans-serif;">
             {{ session('success') }}
