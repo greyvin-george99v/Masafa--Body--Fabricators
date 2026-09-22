@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Gallery | Masafa Safari Vehicle Architecture')
+@section('title', 'Gallery | Custom Safari Vehicle Builds by Masafa')
+@section('meta_description', 'Browse Masafa\'s portfolio of custom Land Cruiser conversions — game viewer builds, chassis extensions, and pop-up roof systems built for the African bush.')
 
 @section('content')
 <section class="gallery-hero-section">

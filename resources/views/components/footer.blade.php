@@ -29,17 +29,17 @@
                         <li><a href="{{ url('/services') }}">Services</a></li>
                         <li><a href="{{ url('/about') }}">About</a></li>
                         <li><a href="{{ url('/gallery') }}">Gallery</a></li>
-                        <li><a href="{{ url('/contact') }}">Contact</a></li>
+                        <li><a href="{{ url('/contacts') }}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="link-column">
                     <h4 class="footer-heading">Services</h4>
                     <ul>
-                        <li><a href="#">Safari Vehicle Conversions</a></li>
-                        <li><a href="#">Pop-up Roof Systems</a></li>
-                        <li><a href="#">Fleet Refurbishment</a></li>
-                        <li><a href="#">CKO Export Builds</a></li>
-                        <li><a href="#">Custom Engineering</a></li>
+                        <li><a href="{{ url('/services#safari-conversions') }}">Safari Vehicle Conversions</a></li>
+                        <li><a href="{{ url('/services#expedition') }}">Pop-up Roof Systems</a></li>
+                        <li><a href="{{ url('/services#expedition') }}">Fleet Refurbishment</a></li>
+                        <li><a href="{{ url('/services#accessories') }}">CKO Export Builds</a></li>
+                        <li><a href="{{ url('/services#accessories') }}">Custom Engineering</a></li>
                     </ul>
                 </div>
 
@@ -47,9 +47,9 @@
                 <div class="link-column">
                     <h4 class="footer-heading">Contact</h4>
                     <ul>
-                        <li><a href="{{ url('/contact') }}">Request a Quote</a></li>
-                        <li><a href="#">Workshop Visit</a></li>
-                        <li><a href="#">0721 519 537</a></li>
+                        <li><a href="{{ url('/contacts') }}">Request a Quote</a></li>
+                        <li><a href="{{ url('/contacts') }}">Workshop Visit</a></li>
+                        <li><a href="tel:+254721519537">0721 519 537</a></li>
                         <li><address>Thindigua Kiambu Rd,<br>Nairobi, Kenya</address></li>
                         <li><time>Mon–Fri 07:00–17:00 EAT</time></li>
                     </ul>

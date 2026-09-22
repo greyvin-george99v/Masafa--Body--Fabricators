@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Our Services')
+@section('title', 'Land Cruiser Conversion Services | Safari Builds & Outfitting')
+@section('meta_description', 'From 6-seater safari body extensions to pop-up roofs, electrical systems, and bullbars — explore Masafa\'s full range of Toyota Land Cruiser conversion services in Kenya.')
 
 @section('content')
     <section class="services-hero">

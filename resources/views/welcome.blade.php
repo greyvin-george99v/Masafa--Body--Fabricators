@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Safari Vehicle Conversion Specialists')
+@section('title', 'Toyota Land Cruiser Safari Conversions | Masafa Body Fabricators')
+@section('meta_description', 'East Africa\'s trusted Toyota Land Cruiser conversion specialists. Custom 6-seater safari builds, pop-up roofs, and expedition outfitting from our Nairobi workshop since 2016.')
 
 @section('content')
 <section class="hero-section">

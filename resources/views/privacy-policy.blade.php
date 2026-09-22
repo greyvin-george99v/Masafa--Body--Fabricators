@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Privacy Policy')
+@section('meta_description', 'Read Masafa Body Fabricators\' privacy policy covering how we collect, use, and protect your personal and vehicle information.')
 
 @section('content')
 <section class="contacts-hero-section">

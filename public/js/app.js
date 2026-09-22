@@ -1,19 +1,4 @@
-
 // resources/js/app.js
-
-// No import needed because of the CDN in app.blade.php
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true,
-})
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -62,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* --- 3. Scroll Reveal Animation (The Watchman) --- */
+    /* --- 3. Scroll Reveal Animation --- */
     const observerOptions = {
         threshold: 0.10, // Slightly lower threshold for better mobile response
         rootMargin: "0px 0px -50px 0px" // Triggers slightly before the element hits the view
@@ -82,20 +67,3 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 });
-
-const observerOptions = {
-    threshold: 0.2
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.reveal-on-scroll').forEach(section => {
-    observer.observe(section);
-});
-

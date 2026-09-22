@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Contacts | Masafa Specialist Land Cruiser Conversions')
+@section('title', 'Contact Us | Get a Land Cruiser Conversion Quote')
+@section('meta_description', 'Request a quote for your Toyota Land Cruiser conversion. Visit our Nairobi workshop on Thindigua Kiambu Rd or reach our team for a technical consultation.')
 
 @section('content')
 <section class="gallery-hero-section">

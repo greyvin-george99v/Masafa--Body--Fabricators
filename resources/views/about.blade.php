@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@@extends('layouts.app')
 
 @section('title', 'About Masafa | Specialist Land Cruiser Conversions')
+@section('meta_description', 'Since 2016, Masafa has engineered the Toyota Land Cruiser 70-Series for East Africa\'s toughest safari expeditions. Meet the team behind the build.')
 
 @section('content')
 <section class="about-hero-section">
