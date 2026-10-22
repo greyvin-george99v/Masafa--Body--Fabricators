@@ -22,4 +22,6 @@ Route::get('/nuke', function() {
     \Illuminate\Support\Facades\Artisan::call('cache:clear');
     \Illuminate\Support\Facades\Artisan::call('view:clear');
     return "All caches cleared. Go back and test the form!";
+
+Route::get('/php-check-7x9k', fn () => PHP_VERSION);
 });
